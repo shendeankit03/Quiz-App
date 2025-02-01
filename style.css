@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+body {
+    background-image: url('https://i.pinimg.com/736x/d6/70/99/d670990fa86f31233a53a22d7bb2f4bc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #2d3436;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.screen {
+    display: none;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+.active {
+    display: block;
+    animation: slideIn 0.5s ease-out;
+}
+
+.start-btn {
+    background: linear-gradient(45deg,  #7500ff, #2941b9);
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin: 30px; 
+}
+
+
+.start-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.question-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transform: perspective(1000px) rotateX(5deg);
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.option-btn {
+    padding: 1.2rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.option-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.option-btn:hover::before {
+    left: 100%;
+}
+
+.option-btn.correct {
+    background: linear-gradient(45deg, #2ecc71, #27ae60) !important;
+    color: white !important;
+}
+
+.option-btn.wrong {
+    background: linear-gradient(45deg, #e74c3c, #c0392b) !important;
+    color: white !important;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #2ecc71, #3498db);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.score-box {
+    background: rgba(255,255,255,0.9);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.next-btn {
+    background: linear-gradient(45deg, #7500ff, #2941b9);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.results-screen {
+    background: rgba(255,255,255,0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.confetti {
+    font-size: 4rem;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px) scale(0.9); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.question-number {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.final-stats {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #2d3436;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Adventure 🚀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div class="screen start-screen active" id="start-screen">
+            <h1> Quiz App</h1>
+            <p>Embark on a knowledge journey!</p>
+            <button class="start-btn" onclick="startQuiz()">Start Quest</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div class="screen" id="quiz-screen">
+            <div class="quiz-header">
+                <div class="score-box">
+                    🏆 Score: <span id="score">0</span>
+                </div>
+                <div class="score-box">
+                    ❓ Question: <span id="current-question">0</span>/<span id="total-questions">0</span>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="question-box">
+                <div class="question-number">Question <span id="question-number">1</span></div>
+                <h2 id="question"></h2>
+                <div class="options" id="options"></div>
+            </div>
+            <button class="next-btn" id="next-btn" onclick="nextQuestion()">Next Level ➔</button>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="screen" id="results-screen">
+            <div class="results-screen">
+                <div class="confetti">🎉🏆🎮</div>
+                <h2>Mission Complete!</h2>
+                <div class="final-stats">
+                    <p>Final Score: <span id="final-score">0</span> points</p>
+                    <p>Correct Answers: <span id="correct-answers">0</span>/<span id="total-questions-final">0</span>
+                    </p>
+                </div>
+                <button class="start-btn" onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
